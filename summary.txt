@@ -1,0 +1,82 @@
+Aim of Smart energy:
+The aim of smart energy use cases in machine learning is to optimize energy consumption, increase efficiency, and reduce costs through the application of advanced data analytics and predictive modeling. 
+
+machine learning model:
+IN smart energy,i have to create three machine learning model
+  1)prediction of energy consumption(Regression)
+  2)anomaly detection of energy consumption(contextual anomaly)
+  3)prediction of Energy Leakage(classification 0 and 1)
+
+1)prediction of Energy consumption:
+  The aim of creating the machine learning model for predicting energy consumption on hourly basis is to know future energy demand that a community or area required.for predicting the energy consumption of community, i have created dataset which consist of following features.
+
+    1)Input Feature
+        1)building_id-Building unique id of 1 to 9
+        2)Building_category-category of building used
+        3)apparent_temperature-apparent temperature of each hour in a location
+        4)Dew_point_temperature-Dew point temperature of each hour in a location.
+        5)Relative_humidity-Relative Humidity of each hour in a location(0-100%)
+        6)Wind_speed-Wind Speed of each hour in a location
+        7)Wind_direction-Wind direction of each hour in a location(0-360)
+        8)day-day from extracted timestamp
+        9)month-month from extracted timestamp
+        10)hour-hour from extracted timestamp
+        11)is_weekend-weekend or not weekday from extracted timestamp
+        12)is_holiday-holiday or not from extracted timestamp
+        13)season-season(Autumn,summer,winter,spring)
+        14)weekday-day of week(monday,tuesday,wednesday,etc)
+
+    2)Output Features:
+        15)Energy consumption
+
+2)Time series anomaly detection of energy consumption:
+  TheTIme series anomaly detection of energy consumption is normaly detecting a very high or low energy consumption than a normal energy consumption.this model is useful for detecting anomaly and to optimise the energy consumption.here i have used contextual anomaly detection technique to solve the anomaly in energy consumption by taking following Features
+
+    1)Input Feature
+        1)building_id-Building unique id of 1 to 9
+        2)Building_category-category of building used
+        3)apparent_temperature-apparent temperature of each hour in a location
+        4)Dew_point_temperature-Dew point temperature of each hour in a location.
+        5)Relative_humidity-Relative Humidity of each hour in a location(0-100%)
+        6)Wind_speed-Wind Speed of each hour in a location
+        7)Wind_direction-Wind direction of each hour in a location(0-360)
+        8)day-day from extracted timestamp
+        9)month-month from extracted timestamp
+        10)hour-hour from extracted timestamp
+        11)is_weekend-weekend or not weekday from extracted timestamp
+        12)is_holiday-holiday or not from extracted timestamp
+        13)season-season(Autumn,summer,winter,spring)
+        14)weekday-day of week(monday,tuesday,wednesday,etc)
+        15)Energy consumption
+
+
+    2)Output Features:
+        15)anomaly(0 or 1)
+
+3)prediction of Energy Leakage(classification 0 and 1):
+lastmodel,we have created TIme series anomaly model with in the building,here we are going to create prediction machine learning model of having a energy leakage between Bulk meter consumption and building meter consumption
+
+     Energy Leakage=Total Energy Recorded by Bulk Meter−Total Energy Recorded by Energy Consumption Meter
+
+THe above formula reciprocates a energy leakage that energy flow from bulk meter to energy consumption meter.here i in my model first seven building id has been comes under 1 bulk meter so i am taking 7 unique building id and bulk meter to find energy leakage.
+
+     1)Input Feature
+        1)1_building
+        2)2_building
+        3)3_building
+        4)4_building
+        5)5_building
+        6)6_building     
+        7)7_building
+        8)bulk_consumption
+
+    2)Output Features:
+        15)energy leakage(0 or 1)
+
+
+dataset download link:https://www.kaggle.com/datasets/cdaclab/unicon
+
+
+
+
+
